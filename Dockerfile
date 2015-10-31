@@ -3,18 +3,13 @@ FROM node:4.2.1-slim
 # Env
 ENV PHANTOMJS_VERSION 1.9.8
 
-COPY ./phantomjs-* /tmp/
+COPY ./phantomjs /usr/bin/phantomjs
 
 # Commands
 RUN \
   apt-get update && \
   apt-get upgrade -y && \
-  apt-get install -y libfreetype6 libfontconfig bzip2 && \
-  mkdir -p /srv/var && \
-  tar -xjf /tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 -C /tmp && \
-  rm -f /tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 && \
-  mv /tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64/ /srv/var/phantomjs && \
-  ln -s /srv/var/phantomjs/bin/phantomjs /usr/bin/phantomjs && \
+  apt-get install -y libfreetype6 libfontconfig && \
   apt-get autoremove -y && \
   apt-get clean all
 
