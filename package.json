@@ -11,6 +11,7 @@
     "rx": "*",
     "setimmediate": "*",
 
+
     "autoprefixer-loader": "*",
     "babel-core": "*",
     "babel-loader": "babel/babel-loader#develop",
@@ -38,6 +39,7 @@
     "file-loader": "*",
     "webpack": "*",
     "webpack-dev-server": "*",
+
 
     "jasmine": "*",
     "jasmine-core": "*",
