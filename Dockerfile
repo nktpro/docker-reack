@@ -15,7 +15,7 @@ RUN \
   mkdir -p /srv/var
 
 RUN \
-  wget -q --no-check-certificate -O /tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2
+  wget -q --no-check-certificate -O /tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 https://github.com/nktpro/docker-reack/raw/master/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2
 
 RUN \
   tar -xjf /tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 -C /tmp && \
