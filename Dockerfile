@@ -9,7 +9,7 @@ COPY ./phantomjs /usr/bin/phantomjs
 RUN \
   apt-get update && \
   apt-get upgrade -y && \
-  apt-get install -y git python libfreetype6 libfontconfig && \
+  apt-get install -y git python make g++ libfreetype6 libfontconfig && \
   apt-get autoremove -y && \
   apt-get clean all
 
