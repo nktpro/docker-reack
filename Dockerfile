@@ -17,7 +17,9 @@ WORKDIR /opt/reack
 
 COPY ./package.json package.json
 
-RUN npm install \
+RUN \
+    npm config set loglevel warn --global \
+    && npm install \
     && npm install -g gulp \
     && npm shrinkwrap
 
