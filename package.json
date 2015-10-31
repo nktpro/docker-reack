@@ -40,7 +40,6 @@
     "webpack": "*",
     "webpack-dev-server": "*",
 
-
     "jasmine": "*",
     "jasmine-core": "*",
     "karma": "*",
