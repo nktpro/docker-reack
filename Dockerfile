@@ -10,7 +10,7 @@ RUN \
   apt-get update && \
   apt-get upgrade -y && \
   apt-get install -y libfreetype6 libfontconfig bzip2 && \
-  mkdir -p /srv/var &&
+  mkdir -p /srv/var && \
   tar -xjf /tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 -C /tmp && \
   rm -f /tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64.tar.bz2 && \
   mv /tmp/phantomjs-$PHANTOMJS_VERSION-linux-x86_64/ /srv/var/phantomjs && \
