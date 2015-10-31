@@ -18,9 +18,8 @@ WORKDIR /opt/reack
 COPY ./package.json package.json
 
 RUN \
-    npm config set loglevel warn --global \
-    && npm install \
-    && npm install -g gulp \
+    npm install --loglevel=warn \
+    && npm install --loglevel=warn -g gulp \
     && npm shrinkwrap
 
 COPY ./polyfill.js polyfill.js
