@@ -11,11 +11,11 @@ dependencies:
 test:
   override:
     - cd test && npm install
-    - docker run -i -v ${PWD}:/opt/reack/app -w /opt/reack/app nktpro/reack gulp eslint
-    - docker run -i -v ${PWD}:/opt/reack/app -w /opt/reack/app nktpro/reack gulp tslint
-    - docker run -i -v ${PWD}:/opt/reack/app -w /opt/reack/app nktpro/reack gulp test
-    - docker run -i -v ${PWD}:/opt/reack/app -w /opt/reack/app nktpro/reack gulp
-    - ls ${PWD}/build/index.js && ls ${PWD}/build/index.html
+    - docker run -i -v ${PWD}/test:/opt/reack/app -w /opt/reack/app nktpro/reack gulp eslint
+    - docker run -i -v ${PWD}/test:/opt/reack/app -w /opt/reack/app nktpro/reack gulp tslint
+    - docker run -i -v ${PWD}/test:/opt/reack/app -w /opt/reack/app nktpro/reack gulp test
+    - docker run -i -v ${PWD}/test:/opt/reack/app -w /opt/reack/app nktpro/reack gulp
+    - ls ${PWD}/test/build/index.js && ls ${PWD}/test/build/index.html
 
 deployment:
   hub:
