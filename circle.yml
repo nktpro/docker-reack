@@ -19,7 +19,7 @@ test:
 
 deployment:
   release:
-    tag: /release-.*/
+    tag: /v.*/
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker tag nktpro/reack:latest nktpro/reack:${CIRCLE_TAG}
