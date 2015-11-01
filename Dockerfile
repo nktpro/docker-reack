@@ -17,7 +17,7 @@ RUN \
   npm install --loglevel=warn -g npm@3.3.1 \
   && npm install --loglevel=warn \
   && npm install --loglevel=warn phantomjs \
-  && npm install --loglevel=warn -g gulp grunt
+  && npm install --loglevel=warn -g gulp grunt-cli \
 
 COPY ./polyfill.js polyfill.js
 
