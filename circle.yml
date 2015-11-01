@@ -18,8 +18,9 @@ test:
     - ls ${PWD}/test/build/index.js && ls ${PWD}/test/build/index.html
 
 deployment:
-  hub:
-    branch: master
+  release:
+    tag: /release-.*/
     commands:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push nktpro/reack
+      - docker tag nktpro/reack:latest nktpro/reack:${CIRCLE_TAG}
+      - docker push nktpro/reack:${CIRCLE_TAG}
