@@ -6,7 +6,7 @@ machine:
 dependencies:
   override:
     - docker info
-    - docker build -t nktpro/reack .
+    - docker build -t nktpro/reack:latest .
 
 test:
   override:
@@ -24,3 +24,4 @@ deployment:
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
       - docker tag nktpro/reack:latest nktpro/reack:${CIRCLE_TAG}
       - docker push nktpro/reack:${CIRCLE_TAG}
+      - docker push nktpro/reack:latest

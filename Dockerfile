@@ -10,15 +10,18 @@ RUN \
 
 WORKDIR /opt/reack
 
-COPY ./package.json package.json
 #COPY ./node_modules node_modules
 
 RUN \
-  npm install --loglevel=warn -g npm@3.3.1 \
-  && npm install --loglevel=warn \
-  && npm install --loglevel=warn phantomjs \
-  && npm install --loglevel=warn -g gulp grunt-cli
+  npm install --loglevel=warn -g gulp grunt-cli
+
+COPY ./package.json package.json
+
+RUN \
+  npm install --loglevel=warn --no-optional --no-bin-links
 
 COPY ./polyfill.js polyfill.js
 
-CMD ["/bin/sh", "-c", "gulp dev"]
+WORKDIR /opt/reack/app
+
+CMD ["/bin/bash", "-c", "gulp dev"]
